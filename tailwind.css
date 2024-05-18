@@ -3,25 +3,36 @@
 @tailwind components;
 @tailwind utilities;
 
-h1 {
-  @apply text-2xl;
-}
+@layer base {
 
-h2 {
-  @apply text-xl;
-}
-h3 {
-  @apply text-lg;
-}
-h4 {
-  @apply text-base;
-}
-h5 {
-  @apply text-sm;
-}
-h6 {
-  @apply text-xs;
-}
-p {
-  @apply text-base;
-}
+  @font-face {
+    font-family: Oswald;
+    src: url(/dist/fonts/Oswald/Oswald-Bold.ttf) format("truetype");
+  }
+
+  .body {
+
+  }
+
+  .typo {
+    @apply prose-2xl prose-red tablet:prose-lg desktop:prose desktop:max-w-min desktop:prose-red;
+  }
+
+  .container {
+    @apply mx-auto;
+  }
+
+
+    .btn {
+      @apply rounded shadow-sm transition hover:shadow-none px-3 py-2 dark:text-white
+    }
+
+    .btn-icon {
+      @apply flex items-center
+    }
+
+    .btn-gray {
+      @apply bg-gray-300 hover:bg-gray-400 dark:bg-gray-500 dark:hover:bg-gray-600
+    }
+
+  }
