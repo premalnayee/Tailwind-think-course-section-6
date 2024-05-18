@@ -2,8 +2,11 @@ const { plugin } = require('postcss');
 
 module.exports = {
   presets: [
-    require('./company_styles')
+    require('./news_styles')
   ],
+  corePlugins: {
+    container: false,
+  },
   content: ['./dist/**/*.html'],
   theme: {
     container: {
