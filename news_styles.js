@@ -2,6 +2,10 @@ module.exports = {
   content: ['./dist/**/*.html'],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
+    screens: {
+      'tablet': '640px',
+      'desktop': '1000px',
+    },
     debugScreens: {
       position: ['top', 'left'],
     },
@@ -20,5 +24,16 @@ module.exports = {
   variants: {
     extend: {},
   },
-
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        '.container': {
+          maxWidth: '100%',
+          '@screen desktop': {
+            maxWidth: '1140px',
+          },
+        }
+      })
+    }
+  ],
 }
